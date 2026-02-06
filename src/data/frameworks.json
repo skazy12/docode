@@ -1,0 +1,198 @@
+{
+  "generic": {
+    "label": "Generic",
+    "excludeDirs": [
+      "node_modules",
+      ".git",
+      "dist",
+      "build",
+      ".next",
+      ".turbo",
+      "coverage"
+    ],
+    "excludeFiles": [
+      ".DS_Store"
+    ],
+    "includeExtensions": [],
+    "entryFiles": [
+      "README.md"
+    ],
+    "maxFileSizeKB": 250,
+    "export": {
+      "mode": "full",
+      "maxFiles": 250,
+      "filenameSuffix": "contents"
+    }
+  },
+
+  "react": {
+    "label": "React",
+    "excludeDirs": [
+      "node_modules",
+      ".git",
+      "dist",
+      "build",
+      "coverage",
+      ".vscode",
+      ".idea"
+    ],
+    "excludeFiles": [
+      ".DS_Store",
+      "package-lock.json",
+      "yarn.lock",
+      "pnpm-lock.yaml",
+      "npm-shrinkwrap.json"
+    ],
+    "includeExtensions": [
+      ".js",
+      ".jsx",
+      ".ts",
+      ".tsx",
+      ".json",
+      ".css",
+      ".scss",
+      ".md"
+    ],
+    "entryFiles": [
+      "package.json",
+      "README.md",
+      "src/main.jsx",
+      "src/App.jsx"
+    ],
+    "maxFileSizeKB": 300,
+    "export": {
+      "mode": "full",
+      "maxFiles": 250,
+      "filenameSuffix": "contents"
+    }
+  },
+
+  "spring_boot": {
+    "label": "Spring Boot",
+    "excludeDirs": [
+      "target",
+      ".git",
+      ".idea",
+      ".vscode",
+      "node_modules",
+      "build",
+      "out",
+      ".gradle",
+      ".mvn/wrapper"
+    ],
+    "excludeFiles": [
+      ".DS_Store"
+    ],
+    "includeExtensions": [
+      ".java",
+      ".properties",
+      ".yml",
+      ".yaml",
+      ".xml",
+      ".groovy",
+      ".gradle",
+      ".json",
+      ".md"
+    ],
+    "entryFiles": [
+      "pom.xml",
+      "build.gradle",
+      "build.gradle.kts",
+      "settings.gradle",
+      "README.md",
+      "src/main/resources/application.properties",
+      "src/main/resources/application.yml",
+      "src/main/resources/application.yaml"
+    ],
+    "specialInclude": {
+      "thymeleafTemplates": true
+    },
+    "importantDirs": [
+      "src/main/java",
+      "src/main/resources",
+      "src/test/java",
+      "src/test/resources"
+    ],
+    "maxFileSizeKB": 300,
+    "export": {
+      "mode": "essential",
+      "maxFiles": 400,
+      "filenameSuffix": "spring-essential"
+    }
+  },
+
+  "flutter": {
+    "label": "Flutter",
+    "excludeDirs": [
+      ".dart_tool",
+      "build",
+      ".idea",
+      ".vscode",
+      ".git",
+      ".gradle",
+      "gradle",
+      "intermediates",
+      "generated",
+      "Pods",
+      "xcuserdata",
+      "DerivedData",
+      ".symlinks",
+      ".firebase",
+      ".cache",
+      ".flutter-plugins",
+      ".flutter-plugins-dependencies",
+      ".packages"
+    ],
+    "excludeFiles": [
+      ".DS_Store"
+    ],
+    "includeExtensions": [
+      ".dart",
+      ".yaml",
+      ".yml",
+      ".json",
+      ".arb",
+      ".md",
+      ".xml",
+      ".gradle",
+      ".kts",
+      ".kt",
+      ".java",
+      ".plist",
+      ".entitlements",
+      ".mm",
+      ".m",
+      ".xcconfig",
+      ".properties",
+      ".html",
+      ".css",
+      ".js"
+    ],
+    "entryFiles": [
+      "pubspec.yaml",
+      "analysis_options.yaml",
+      "l10n.yaml",
+      "lib/main.dart",
+      "README.md"
+    ],
+    "importantDirs": [
+      "lib",
+      "test",
+      "integration_test",
+      "android",
+      "ios",
+      "web",
+      "windows",
+      "macos",
+      "linux",
+      "assets",
+      "tool"
+    ],
+    "maxFileSizeKB": 300,
+    "export": {
+      "mode": "essential",
+      "maxFiles": 300,
+      "filenameSuffix": "flutter-essential"
+    }
+  }
+}
