@@ -1,16 +1,66 @@
-# React + Vite
+# DOCODE 🧠📁
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DOCODE** es una herramienta web que permite **analizar proyectos de código (GitHub o carpetas locales)**, aplicar reglas según el framework y **generar documentación estructurada en un solo archivo `.txt`**, ideal para análisis, revisión de código o uso con modelos de lenguaje (LLMs).
 
-Currently, two official plugins are available:
+🌐 **Demo online:**  
+https://skazy12.github.io/docode/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ ¿Qué hace DOCODE?
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🔍 Analiza **repositorios GitHub públicos**
+- 📂 Lee **carpetas locales** directamente desde el navegador
+- 🧩 Aplica reglas según el **framework seleccionado**
+- 🌳 Muestra el **árbol de directorios**
+- 📄 Permite ver el **contenido de cada archivo**
+- 📥 Genera un `.txt` con toda la documentación del proyecto
+- ⚡ Funciona 100% en el navegador (sin backend)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Frameworks soportados
+
+DOCODE filtra y prioriza archivos según reglas definidas por framework:
+
+- React
+- Flutter
+- Spring Boot
+- Generic (sin framework específico)
+
+Las reglas se configuran en: `src/data/frameworks.json`.
+
+---
+
+## 🚀 Flujo de uso
+
+1. El usuario ingresa una URL de GitHub o selecciona una carpeta local.
+2. Elige el framework a aplicar.
+3. DOCODE analiza la estructura, filtra archivos relevantes y construye el árbol de directorios.
+4. Se puede navegar el árbol, previsualizar archivos y exportar la documentación en `.txt`.
+
+---
+
+## 🧱 Tecnologías utilizadas
+
+- React + Vite
+- CSS moderno
+- GitHub Pages
+- File System Access API (modo local)
+
+---
+
+## 💻 Desarrollo local
+
+Clona el repositorio, instala dependencias y ejecuta:
+
+- `npm install`
+- `npm run dev`
+
+---
+
+## 👤 Autor
+
+Creado por **Omar Rodríguez**  
+GitHub: https://github.com/skazy12  
+Repo: https://github.com/skazy12/docode
