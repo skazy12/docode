@@ -234,3 +234,30 @@ button:disabled{
   padding: 14px;
 }
 
+.brandTitle{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo{
+  object-fit: contain;
+  width: 100px;          
+  height: 100px;
+  background: radial-gradient(
+    circle at center,
+    rgba(99,102,241,.35),
+    transparent 70%
+  );
+  border-radius: 14px;
+}
+.creator a{
+  color: #a5b4fc;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.creator a:hover{
+  text-decoration: underline;
+}
+

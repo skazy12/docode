@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../assets/logodocode.png";
 
 export default function TopBar({
   mode,
@@ -15,15 +16,27 @@ export default function TopBar({
     <div className="header">
       <div className="brandRow">
         <div>
-          <h1>DOCODE</h1>
+          <div className="brandTitle">
+            <img src={logo} alt="DOCODE logo" className="logo" />
+            <h1>DOCODE</h1>
+          </div>
+
           <p className="tagline">
             Documenta y entiende cualquier proyecto en segundos
           </p>
         </div>
 
         <div className="creator">
-          by <strong>Omar Rodríguez</strong>
+          by <strong>Omar Rodríguez</strong> ·{" "}
+          <a
+            href="https://github.com/skazy12/docode"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
         </div>
+
       </div>
 
       <div className="toolbar">
