@@ -16,19 +16,6 @@ export default function LeftPanel({
   return (
     <div className="panel">
       <div className="panelHeader">
-        <div style={{ flex: 1, minWidth: 0 }}>
-          <div className="panelTitle">{metaTitle}</div>
-          <div className="panelSubtitle">
-            Archivos: {fileCount}
-            {entryFiles?.length ? ` | Entry: ${entryFiles.join(", ")}` : ""}
-          </div>
-          {exporting && (
-            <div className="panelSubtitle">
-              Exportando: {exportProgress.done}/{exportProgress.total}
-            </div>
-          )}
-        </div>
-
         <div className="exportButtons">
           <button onClick={onDownloadStructure} disabled={!tree || exporting}>
             Estructura .txt
@@ -37,7 +24,28 @@ export default function LeftPanel({
             Contenido .txt
           </button>
         </div>
+
+        <div className="panelMeta">
+          <div className="panelTitle" title={metaTitle}>
+            {metaTitle}
+          </div>
+
+          <div
+            className="panelSubtitle"
+            title={entryFiles?.length ? entryFiles.join(", ") : ""}
+          >
+            Archivos: {fileCount}
+            {entryFiles?.length ? ` | Entry: ${entryFiles.join(", ")}` : ""}
+          </div>
+
+          {exporting && (
+            <div className="panelSubtitle">
+              Exportando: {exportProgress.done}/{exportProgress.total}
+            </div>
+          )}
+        </div>
       </div>
+
 
 
       <div className="treeBody">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import FileViewer from "../common/FileViewer";
 
 export default function RightPanel({
@@ -7,18 +7,32 @@ export default function RightPanel({
   loading,
   onCopy
 }) {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = async () => {
+    await onCopy();
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
+
   return (
     <div className="panel">
-      <div className="panelHeader">
-        <div>
+      <div className="panelHeader panelHeaderRow">
+        <div className="panelMeta">
           <div className="panelTitle">{selectedPath || "Visor"}</div>
           <div className="panelSubtitle">
-            {selectedPath ? "Vista previa del archivo" : "Selecciona un archivo a la izquierda"}
+            {selectedPath
+              ? "Vista previa del archivo"
+              : "Selecciona un archivo a la izquierda"}
           </div>
         </div>
 
-        <button onClick={onCopy} disabled={!selectedPath}>
-          Copiar
+        <button
+          className={`copyBtn ${copied ? "copied" : ""}`}
+          onClick={handleCopy}
+          disabled={!selectedPath}
+        >
+          {copied ? "Copiado ✓" : "Copiar"}
         </button>
       </div>
 
