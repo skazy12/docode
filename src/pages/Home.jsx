@@ -48,7 +48,14 @@ export default function Home() {
     if (!path) return "";
     if (state.sourceType === "github") {
       const { owner, repo, branch } = state.meta || {};
-      return await fetchFileContent({ owner, repo, path, ref: branch || "HEAD" });
+      return await fetchFileContent({
+        owner,
+        repo,
+        path,
+        ref: branch || "HEAD", 
+        token: state.githubToken
+      });
+
     }
     if (state.sourceType === "local") {
       const handle = state.meta?.handle;
@@ -155,6 +162,8 @@ async function onDownloadContents() {
         setSelectedFramework={setSelectedFramework}
         input={state.input}
         setInput={(v) => actions.setInput(v)}
+        githubToken={state.githubToken}
+        setGithubToken={(t) => actions.setGithubToken(t)}
         onAnalyze={onAnalyze}
         busy={busy}
       />

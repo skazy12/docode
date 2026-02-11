@@ -2,6 +2,8 @@ import React from "react";
 import logo from "../../assets/logodocode.png";
 
 export default function TopBar({
+  githubToken,
+  setGithubToken,
   mode,
   setMode,
   frameworks,
@@ -75,6 +77,18 @@ export default function TopBar({
             onChange={(e) => setInput(e.target.value)}
             disabled={busy}
           />
+          <input
+            type="password"
+            placeholder="GitHub Token (optional)"
+            value={githubToken || ""}
+            onChange={(e) => setGithubToken(e.target.value)}
+            style={{ minWidth: 320 }}
+          />
+
+          <p style={{ fontSize: 12, color: "#6b7280", marginTop: 4 }}>
+            Used only in your browser to increase GitHub API limits.
+          </p>
+
           <button onClick={onAnalyze} disabled={busy || !input.trim()}>
             {busy ? "Analizando..." : "Analizar"}
           </button>
