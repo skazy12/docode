@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../assets/logodocode.png";
 
 export default function TopBar({
@@ -14,6 +14,8 @@ export default function TopBar({
   onAnalyze,
   busy
 }) {
+  const [showTokenHelp, setShowTokenHelp] = useState(false);
+
   return (
     <div className="header">
       <div className="brandRow">
@@ -84,10 +86,55 @@ export default function TopBar({
             onChange={(e) => setGithubToken(e.target.value)}
             style={{ minWidth: 320 }}
           />
+          <button
+            type="button"
+            className="helpBtn"
+            onClick={() => setShowTokenHelp((v) => !v)}
+          >
+            {showTokenHelp ? "Ocultar guía" : "Guía token"}
+          </button>
 
           <p style={{ fontSize: 12, color: "#6b7280", marginTop: 4 }}>
-            Used only in your browser to increase GitHub API limits.
+            
+Se utiliza únicamente en su navegador para aumentar los límites de la API de GitHub.
           </p>
+
+          {showTokenHelp && (
+            <div className="tokenHelpCard" role="region" aria-live="polite">
+              <div className="tokenHelpHeader">
+                <strong>Cómo obtener tu GitHub token</strong>
+                <button
+                  type="button"
+                  className="tokenHelpClose"
+                  onClick={() => setShowTokenHelp(false)}
+                >
+                  Cerrar
+                </button>
+              </div>
+              <ol>
+                <li>
+                  Entra a{" "}
+                  <a
+                    href="https://github.com/settings/tokens"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    github.com/settings/tokens
+                  </a>
+                  .
+                </li>
+                <li>
+                  Crea un token (`Fine-grained` recomendado) y selecciona al
+                  menos permiso de lectura al repositorio.
+                </li>
+                <li>Copia el token y pégalo en el campo de arriba.</li>
+              </ol>
+              <p>
+                El token se usa solo en tu navegador para evitar límites de la
+                API de GitHub.
+              </p>
+            </div>
+          )}
 
           <button onClick={onAnalyze} disabled={busy || !input.trim()}>
             {busy ? "Analizando..." : "Analizar"}

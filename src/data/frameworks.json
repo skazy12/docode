@@ -274,5 +274,55 @@
       "maxFiles": 400,
       "filenameSuffix": "dotnet-essential"
     }
+  },
+  "flask": {
+    "label": "Flask",
+    "excludeDirs": [
+      ".venv",
+      "venv",
+      "__pycache__",
+      ".git",
+      ".idea",
+      ".vscode",
+      "dist",
+      "build",
+      ".pytest_cache",
+      ".mypy_cache"
+    ],
+    "excludeFiles": [
+      ".DS_Store",
+      ".env"
+    ],
+    "includeExtensions": [
+      ".py",
+      ".html",
+      ".css",
+      ".js",
+      ".json",
+      ".yml",
+      ".yaml",
+      ".ini",
+      ".toml",
+      ".md"
+    ],
+    "entryFiles": [
+      "app.py",
+      "wsgi.py",
+      "requirements.txt",
+      "pyproject.toml",
+      "README.md"
+    ],
+    "importantDirs": [
+      "app",
+      "templates",
+      "static",
+      "tests"
+    ],
+    "maxFileSizeKB": 300,
+    "export": {
+      "mode": "essential",
+      "maxFiles": 300,
+      "filenameSuffix": "flask-essential"
+    }
   }
 }
